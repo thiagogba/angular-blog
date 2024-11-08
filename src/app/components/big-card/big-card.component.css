@@ -1,8 +1,10 @@
 .container__big-card {
-  border: solid white 2px;
+  --max-container-width: 350px;
+  
+  /* border: solid white 2px; */
   margin-left: 10px;
   margin-right: 10px;
-  width: 400px;
+  width: var(--max-container-width);
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -15,8 +17,16 @@
   font-size: 1.2rem;
 }
 
-.big-card__description > p {
+.big-card__description {
   margin-top: 0.3rem;
+}
+
+.big-card__description > p > a{
   font-size: 1rem;
   color: grey;
+}
+
+.big-card__image > img {
+  width: 100%;
+  min-width: var(--max-container-width);
 }
