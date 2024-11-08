@@ -27,6 +27,7 @@
 }
 
 .big-card__image > img {
+  height: 150px;
   width: 100%;
   min-width: var(--max-container-width);
 }
