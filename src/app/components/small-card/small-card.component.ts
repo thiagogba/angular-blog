@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { data } from '../../data/dataFake'
 
 @Component({
   selector: 'app-small-card',
@@ -7,11 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class SmallCardComponent implements OnInit{
-  @Input() photoCover: string = ""
-  @Input() cardTitle: string = ""
+  @Input() Id: string = "0"
+
+  photoCover: string = ""
+  cardTitle: string = ""
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const int_id = parseInt(this.Id)
+    const result = data.filter(article => article.id == int_id)[0]
+
+    if (result) {
+      this.photoCover = result.photo
+      this.cardTitle = result.title
+    }
+  }
 
 }
