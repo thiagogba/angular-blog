@@ -8,6 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class CardComponent {
+  name: string = "BULDASAUR"
+  attributesTypes: string[] = ['FIRE', 'ROCK']
+
   constructor(
     private activeRoute: ActivatedRoute,
     private navegador: Router ) {
